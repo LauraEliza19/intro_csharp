@@ -1,0 +1,14 @@
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\bin\Debug\net9.0\Aula2.exe
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\bin\Debug\net9.0\Aula2.deps.json
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\bin\Debug\net9.0\Aula2.runtimeconfig.json
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\bin\Debug\net9.0\Aula2.dll
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\bin\Debug\net9.0\Aula2.pdb
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\obj\Debug\net9.0\Aula2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\obj\Debug\net9.0\Aula2.AssemblyInfoInputs.cache
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\obj\Debug\net9.0\Aula2.AssemblyInfo.cs
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\obj\Debug\net9.0\Aula2.csproj.CoreCompileInputs.cache
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\obj\Debug\net9.0\Aula2.dll
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\obj\Debug\net9.0\refint\Aula2.dll
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\obj\Debug\net9.0\Aula2.pdb
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\obj\Debug\net9.0\Aula2.genruntimeconfig.cache
+C:\Users\1396264\Documents\GitHub\intro_csharp\Aula2\obj\Debug\net9.0\ref\Aula2.dll
