@@ -1,56 +1,70 @@
-﻿//----------------------------------------------------//--------------------------------------------------
-//ex 1 Pedra Papel Tesoura
-using System;
+﻿using System;
+using System.Collections.Generic;
 
-class Program
+class Forca
 {
     static void Main()
     {
-        Random rand = new Random();
+        // Definindo a palavra secreta
+        string palavraSecreta = "programacao";
+        // Criando uma lista para armazenar as letras da palavra secreta
+        List<char> letrasCorretas = new List<char>(new char[palavraSecreta.Length]);
+        for (int i = 0; i < letrasCorretas.Count; i++)
+            letrasCorretas[i] = '_';
 
-        Console.WriteLine("Escolha entre 1 para pedra, 2 para papel ou 3 para tesoura: ");
-        string entrada = Console.ReadLine();
+        // Lista de letras erradas
+        List<char> letrasErradas = new List<char>();
 
-        if (!int.TryParse(entrada, out int escolha) || escolha < 1 || escolha > 3)
+        // Definindo o número de tentativas
+        int tentativas = 6;
+
+        while (tentativas > 0 && letrasCorretas.Contains('_'))
         {
-            Console.WriteLine("Escolha inválida. Tente novamente.");
-            return;
+            Console.Clear();
+            Console.WriteLine("Jogo da Forca!");
+            Console.WriteLine("Palavra: " + string.Join(" ", letrasCorretas));
+            Console.WriteLine("Letras erradas: " + string.Join(", ", letrasErradas));
+            Console.WriteLine("Tentativas restantes: " + tentativas);
+            Console.Write("Digite uma letra: ");
+            char letra = Char.ToLower(Console.ReadKey().KeyChar);
+            Console.WriteLine();
+
+            // Verificando se a letra foi repetida
+            if (letrasErradas.Contains(letra) || letrasCorretas.Contains(letra))
+            {
+                Console.WriteLine("Você já tentou essa letra. Tente outra.");
+                continue;
+            }
+
+            // Verificando se a letra está na palavra secreta
+            if (palavraSecreta.Contains(letra))
+            {
+                // Atualizando as letras corretas
+                for (int i = 0; i < palavraSecreta.Length; i++)
+                {
+                    if (palavraSecreta[i] == letra)
+                    {
+                        letrasCorretas[i] = letra;
+                    }
+                }
+            }
+            else
+            {
+                // Se a letra não estiver na palavra secreta, é uma tentativa errada
+                letrasErradas.Add(letra);
+                tentativas--;
+            }
         }
 
-        int pc_escolha_num = rand.Next(1, 4);
-
-        string escolha_nome = escolha switch
+        // Resultado
+        Console.Clear();
+        if (!letrasCorretas.Contains('_'))
         {
-            1 => "1 - Pedra",
-            2 => "2 - Papel",
-            3 => "3 - Tesoura"
-        };
-
-        string pc_escolha_nome = pc_escolha_num switch
-        {
-            1 => "1 - Pedra",
-            2 => "2 - Papel",
-            3 => "3 - Tesoura"
-        };
-
-        Console.WriteLine($"Você escolheu: {escolha_nome}.");
-        Console.WriteLine($"PC escolheu: {pc_escolha_nome}.");
-
-        if (escolha == pc_escolha_num)
-        {
-            Console.WriteLine("Empate");
-        }
-        else if ((escolha == 1 && pc_escolha_num == 3) ||
-                 (escolha == 2 && pc_escolha_num == 1) ||
-                 (escolha == 3 && pc_escolha_num == 2))
-        {
-            Console.WriteLine("Você ganhou!");
+            Console.WriteLine("Parabéns! Você adivinhou a palavra: " + palavraSecreta);
         }
         else
         {
-            Console.WriteLine("Você perdeu.");
+            Console.WriteLine("Você perdeu! A palavra era: " + palavraSecreta);
         }
     }
 }
-
-
