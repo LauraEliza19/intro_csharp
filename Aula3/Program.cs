@@ -5,17 +5,14 @@ class Forca
 {
     static void Main()
     {
-        // Definindo a palavra secreta
-        string palavraSecreta = "programacao";
-        // Criando uma lista para armazenar as letras da palavra secreta
+        string palavraSecreta = "csharp";
+
         List<char> letrasCorretas = new List<char>(new char[palavraSecreta.Length]);
         for (int i = 0; i < letrasCorretas.Count; i++)
             letrasCorretas[i] = '_';
 
-        // Lista de letras erradas
         List<char> letrasErradas = new List<char>();
 
-        // Definindo o número de tentativas
         int tentativas = 6;
 
         while (tentativas > 0 && letrasCorretas.Contains('_'))
@@ -29,17 +26,14 @@ class Forca
             char letra = Char.ToLower(Console.ReadKey().KeyChar);
             Console.WriteLine();
 
-            // Verificando se a letra foi repetida
             if (letrasErradas.Contains(letra) || letrasCorretas.Contains(letra))
             {
                 Console.WriteLine("Você já tentou essa letra. Tente outra.");
                 continue;
             }
 
-            // Verificando se a letra está na palavra secreta
             if (palavraSecreta.Contains(letra))
             {
-                // Atualizando as letras corretas
                 for (int i = 0; i < palavraSecreta.Length; i++)
                 {
                     if (palavraSecreta[i] == letra)
@@ -50,13 +44,11 @@ class Forca
             }
             else
             {
-                // Se a letra não estiver na palavra secreta, é uma tentativa errada
                 letrasErradas.Add(letra);
                 tentativas--;
             }
         }
 
-        // Resultado
         Console.Clear();
         if (!letrasCorretas.Contains('_'))
         {
